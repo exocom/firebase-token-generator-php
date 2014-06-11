@@ -19,6 +19,9 @@
         "php": ">=5.2.0",
         "firebase/php-jwt": "dev-master"
     },
+		"autoload":{
+			"psr-0": { "Services_FirebaseTokenGenerator": "" }
+		},
     "target-dir": "Firebase/token-generator",
     "minimum-stability": "dev"
 }

@@ -1,17 +1,5 @@
 <?php
 
-$jwt_filename = dirname(__FILE__) . 'JWT.php';
-
-if (!file_exists($jwt_filename)) {
-    // try Composer autoload
-    $autoload = dirname(__FILE__) . '/vendor/autoload.php';
-
-    if (file_exists($autoload)) {
-        $jwt_filename = $autoload;
-    }
-}
-
-include_once $jwt_filename;
 
 class Services_FirebaseTokenGenerator
 {
@@ -30,6 +18,9 @@ class Services_FirebaseTokenGenerator
     {
         if (!is_string($secret)) {
             throw new UnexpectedValueException("Invalid secret provided");
+        }
+        if(!class_exists('JWT')) {
+            throw new Exception("This class requires the JWT class");
         }
         $this->secret = $secret;
     }
