@@ -1,7 +1,7 @@
 <?php
 
 
-class Services_FirebaseTokenGenerator
+class FirebaseTokenGenerator
 {
     private $version = 0;
 
